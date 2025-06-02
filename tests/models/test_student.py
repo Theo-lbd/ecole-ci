@@ -1,5 +1,5 @@
-from ecole.models.student import Student
-from ecole.models.course import Course
+from ecole.student import Student
+from ecole.course import Course
 
 
 def test_student_initialization():

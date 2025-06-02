@@ -1,5 +1,5 @@
-from ecole.models.teacher import Teacher
-from ecole.models.course import Course
+from ecole.teacher import Teacher
+from ecole.course import Course
 from datetime import date
 
 

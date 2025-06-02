@@ -1,7 +1,7 @@
-from ecole.business.school import School
-from ecole.models.course import Course
-from ecole.models.teacher import Teacher
-from ecole.models.student import Student
+from ecole.school import School
+from ecole.course import Course
+from ecole.teacher import Teacher
+from ecole.student import Student
 from datetime import date
 
 

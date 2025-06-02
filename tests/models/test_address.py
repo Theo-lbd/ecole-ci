@@ -1,4 +1,4 @@
-from ecole.models.address import Address
+from ecole.address import Address
 
 
 def test_address_initialization():
