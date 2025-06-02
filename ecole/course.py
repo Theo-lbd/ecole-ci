@@ -4,16 +4,12 @@
 Classe Course
 """
 
-# pour simplifier les annotations de types des classes non importées à l'exécution
-# (teacher: Teacher plutôt que teacher: 'Teacher')
 from __future__ import annotations
 
 from typing import Optional, TYPE_CHECKING
 from dataclasses import dataclass, field
 from datetime import date
 
-# pour éviter une circularité des imports à l'exécution,
-# les classes Student et Teacher important la classe Course
 if TYPE_CHECKING:
     from .student import Student
     from .teacher import Teacher
@@ -37,14 +33,8 @@ class Course:
 
     def set_teacher(self, teacher: Teacher) -> None:
         """Indique quel est l'enseignant de ce cours."""
-        if teacher != self.teacher:
-            # Supprime ce cours des cours enseignés par l'ancien enseignant, s'il y en a un
-            if self.teacher is not None:
-                self.teacher.courses_teached.remove(self)
-
-            # Associe ce cours au nouvel enseignant
-            teacher.courses_teached.append(self)
-            self.teacher = teacher  # Définit le nouvel enseignant pour ce cours
+        self.teacher = teacher
+        teacher.courses_teached.append(self)
 
     def add_student(self, student: Student) -> None:
         """Ajoute :
