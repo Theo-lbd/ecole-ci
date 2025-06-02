@@ -1,0 +1,35 @@
+# Environnement virtuel
+.venv/
+venv/
+env/
+
+# Fichiers temporaires Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Fichiers de log / cache
+*.log
+*.sqlite3
+*.db
+*.tmp
+*.swp
+.cache/
+.pytest_cache/
+
+# Config PyCharm
+.idea/
+
+# Dossiers générés par CircleCI ou d'autres outils CI
+.circleci/cache/
+
+# Dossiers de build
+build/
+dist/
+*.egg-info/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
