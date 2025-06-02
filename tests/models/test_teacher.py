@@ -32,4 +32,3 @@ def test_add_course(mocker):
 def test_teacher_str():
     teacher = Teacher("Sophie", "Germain", 40, date(2023, 9, 4))
     assert str(teacher) == "Sophie Germain (40 ans), arrivé(e) le 2023-09-04"
-
