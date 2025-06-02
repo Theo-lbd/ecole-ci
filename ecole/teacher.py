@@ -23,6 +23,7 @@ class Teacher(Person):
     def add_course(self, course: Course) -> None:
         """Ajout du cours course à la liste des cours qu'il enseigne."""
         course.teacher = self
+        self.courses_teached.append(course)
 
     def __str__(self) -> str:
         return f"{self.first_name} {self.last_name} ({self.age} ans), arrivé(e) le {self.hiring_date}"
