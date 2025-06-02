@@ -65,7 +65,6 @@ def test_course_str(mocker):
     )
 
 
-
 def test_set_teacher_replacement():
     old_teacher = Teacher("Albert", "Einstein", 55, date(2020, 1, 1))
     new_teacher = Teacher("Marie", "Curie", 40, date(2021, 9, 1))
