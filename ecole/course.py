@@ -33,8 +33,14 @@ class Course:
 
     def set_teacher(self, teacher: Teacher) -> None:
         """Indique quel est l'enseignant de ce cours."""
-        self.teacher = teacher
-        teacher.courses_teached.append(self)
+        if teacher != self.teacher:
+            # Supprime ce cours des cours enseignés par l'ancien enseignant, s'il y en a un
+            if self.teacher is not None:
+                self.teacher.courses_teached.remove(self)
+
+            # Associe ce cours au nouvel enseignant
+            teacher.courses_teached.append(self)
+            self.teacher = teacher
 
     def add_student(self, student: Student) -> None:
         """Ajoute :
