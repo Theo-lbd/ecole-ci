@@ -63,3 +63,18 @@ def test_course_str(mocker):
         str(course)
         == f"{course.name} ({course.start_date} – {course.end_date}),\nenseigné par {teacher}"
     )
+
+
+
+def test_set_teacher_replacement():
+    old_teacher = Teacher("Albert", "Einstein", 55, date(2020, 1, 1))
+    new_teacher = Teacher("Marie", "Curie", 40, date(2021, 9, 1))
+    course = Course("Physique", date(2024, 3, 1), date(2024, 6, 1))
+
+    old_teacher.add_course(course)
+
+    course.set_teacher(new_teacher)
+
+    assert course in new_teacher.courses_teached
+
+    assert course not in old_teacher.courses_teached
