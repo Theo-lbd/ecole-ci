@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Définir PYTHONPATH
           command: |
-            echo 'export PYTHONPATH=.' >> $BASH_ENV
+            echo 'export PYTHONPATH=$PYTHONPATH:$(pwd)' >> $BASH_ENV
             source $BASH_ENV
 
       - run:
