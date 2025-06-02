@@ -17,7 +17,7 @@ def test_add_course(mocker):
     course = Course("Français", "2024-01-29", "2024-02-16")
 
     # Mock de la liste des étudiants prenant le cours pour isoler le test
-    mocker.patch.object(course, 'students_taking_it', [])
+    mocker.patch.object(course, "students_taking_it", [])
 
     # Ajoute le cours à l'étudiant
     student.add_course(course)
@@ -33,4 +33,7 @@ def test_student_str():
     student = Student("Louis", "Berthot", 11)
 
     # Vérifie que la représentation en chaîne de caractères est correcte
-    assert str(student) == f"{student.first_name} {student.last_name} ({student.age} ans), n° étudiant : {student.student_nbr}"
+    assert (
+        str(student)
+        == f"{student.first_name} {student.last_name} ({student.age} ans), n° étudiant : {student.student_nbr}"
+    )

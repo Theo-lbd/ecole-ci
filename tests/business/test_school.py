@@ -4,6 +4,7 @@ from ecole.models.teacher import Teacher
 from ecole.models.student import Student
 from datetime import date
 
+
 def test_add_course():
     # Création d'une école et d'un cours
     school = School()
@@ -14,6 +15,7 @@ def test_add_course():
 
     # Vérifie que le cours est bien ajouté à la liste des cours de l'école
     assert course in school.courses
+
 
 def test_add_teacher():
     # Création d'une école et d'un enseignant
@@ -26,6 +28,7 @@ def test_add_teacher():
     # Vérifie que l'enseignant est bien ajouté à la liste des enseignants de l'école
     assert teacher in school.teachers
 
+
 def test_add_student():
     # Création d'une école et d'un étudiant
     school = School()
@@ -36,6 +39,7 @@ def test_add_student():
 
     # Vérifie que l'étudiant est bien ajouté à la liste des élèves de l'école
     assert student in school.students
+
 
 def test_display_courses_list(mocker):
     # Création d'une école, d'un cours, d'un enseignant et d'un étudiant

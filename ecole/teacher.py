@@ -16,6 +16,7 @@ class Teacher(Person):
     - hiring_date     : date d'arrivée dans l'école
     - courses_teached : cours qu'il ou elle enseigne
     """
+
     hiring_date: date
     courses_teached: list[Course] = field(default_factory=list, init=False)
 

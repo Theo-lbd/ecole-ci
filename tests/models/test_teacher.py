@@ -18,7 +18,7 @@ def test_add_course(mocker):
     course = Course("Chimie", date(2024, 2, 26), date(2024, 3, 15))
 
     # Mock de l'attribut teacher du cours pour isoler le test
-    mocker.patch.object(course, 'teacher', None)
+    mocker.patch.object(course, "teacher", None)
 
     # Assigne le cours à l'enseignant
     teacher.add_course(course)
@@ -34,4 +34,7 @@ def test_teacher_str():
     teacher = Teacher("Sophie", "Germain", 40, date(2023, 9, 4))
 
     # Vérifie que la représentation en chaîne de caractères est correcte
-    assert str(teacher) == f"{teacher.first_name} {teacher.last_name}, arrivé(e) le {teacher.hiring_date}"
+    assert (
+        str(teacher)
+        == f"{teacher.first_name} {teacher.last_name}, arrivé(e) le {teacher.hiring_date}"
+    )

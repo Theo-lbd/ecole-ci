@@ -22,7 +22,7 @@ def test_set_teacher(mocker):
     teacher = Teacher("Marie", "Curie", 38, date(2023, 9, 4))
 
     # Mock de la liste des cours enseignés par l'enseignant pour isoler le test
-    mocker.patch.object(teacher, 'courses_teached', [])
+    mocker.patch.object(teacher, "courses_teached", [])
 
     # Assigne l'enseignant au cours
     course.set_teacher(teacher)
@@ -39,7 +39,7 @@ def test_add_student(mocker):
     student = Student("Paul", "Dubois", 12)
 
     # Mock de la liste des cours suivis par l'étudiant pour isoler le test
-    mocker.patch.object(student, 'courses_taken', [])
+    mocker.patch.object(student, "courses_taken", [])
 
     # Ajoute l'étudiant au cours
     course.add_student(student)
@@ -56,7 +56,10 @@ def test_course_str(mocker):
 
     # Mock de l'enseignant
     teacher = Teacher("Jules", "Michelet", 32, date(2023, 9, 4))
-    mocker.patch.object(course, 'teacher', teacher)
+    mocker.patch.object(course, "teacher", teacher)
 
     # Vérifie que la représentation en chaîne de caractères est correcte avec et sans enseignant
-    assert str(course) == f"{course.name} ({course.start_date} – {course.end_date}),\nenseigné par {teacher}"
+    assert (
+        str(course)
+        == f"{course.name} ({course.start_date} – {course.end_date}),\nenseigné par {teacher}"
+    )
