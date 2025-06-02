@@ -25,5 +25,4 @@ class Teacher(Person):
         course.teacher = self
 
     def __str__(self) -> str:
-        person_str = super().__str__()
         return f"{self.first_name} {self.last_name} ({self.age} ans), arrivé(e) le {self.hiring_date}"
