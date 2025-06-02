@@ -30,11 +30,6 @@ def test_add_course(mocker):
 
 
 def test_teacher_str():
-    # Création d'un enseignant
     teacher = Teacher("Sophie", "Germain", 40, date(2023, 9, 4))
+    assert str(teacher) == "Sophie Germain (40 ans), arrivé(e) le 2023-09-04"
 
-    # Vérifie que la représentation en chaîne de caractères est correcte
-    assert (
-        str(teacher)
-        == f"{teacher.first_name} {teacher.last_name}, arrivé(e) le {teacher.hiring_date}"
-    )
